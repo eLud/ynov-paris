@@ -1,11 +1,12 @@
 //: Playground - noun: a place where people can play
 
-enum RestaurantStyle {
+enum RestaurantStyle: String {
     case chinese
     case burger
     case vegan
     case other
 }
+
 struct Restaurant: Equatable {
     
     var name: String
@@ -26,6 +27,7 @@ struct Restaurant: Equatable {
 
 var resto = Restaurant(name: "", address: "", style: .burger, note: 0, isVisited: false)
 resto.grade(5)
+resto.style.rawValue
 
 class Directory {
     
