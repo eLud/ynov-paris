@@ -1,10 +1,16 @@
 //: Playground - noun: a place where people can play
 
+enum RestaurantStyle {
+    case chinese
+    case burger
+    case vegan
+    case other
+}
 struct Restaurant: Equatable {
     
     var name: String
     var address: String
-    var style: String
+    var style: RestaurantStyle
     var note: Int
     var isVisited: Bool
 
@@ -18,7 +24,7 @@ struct Restaurant: Equatable {
     }
 }
 
-var resto = Restaurant(name: "", address: "", style: "", note: 0, isVisited: false)
+var resto = Restaurant(name: "", address: "", style: .burger, note: 0, isVisited: false)
 resto.grade(5)
 
 class Directory {
@@ -55,8 +61,8 @@ class Directory {
 }
 
 let dir = Directory()
-let r1 = Restaurant(name: "R1", address: "A1", style: "", note: 0, isVisited: false)
-let r2 = Restaurant(name: "R2", address: "A1", style: "", note: 0, isVisited: false)
+let r1 = Restaurant(name: "R1", address: "A1", style: .vegan, note: 0, isVisited: false)
+let r2 = Restaurant(name: "R2", address: "A1", style: .chinese, note: 0, isVisited: false)
 
 dir.add(r1)
 dir.list()
