@@ -70,4 +70,59 @@ if let monInt = testOptionnal {
     monInt * 2
 }
 
+// borne sup incluse
+for i in 0...10 {
+    print(i)
+}
+
+// borne sup exclue
+for i in 0..<10 {
+    print(i)
+}
+
+var nbHabitants = ["Paris" : 2250000, "Bordeaux" : 239000, "Lyon" : 491268, "Marseille" : 850636]
+
+for truc in nbHabitants {
+    print("La clé est " + truc.key)
+    print("La clé est \(truc.value)")
+}
+
+var greeting = "Good Morning"
+
+switch greeting {
+case "Good Morning":
+    print("It's morning")
+
+case "Good Evening":
+    print("It's evening")
+default:
+    print("I don't know")
+}
+
+enum TransportStatus {
+    case onTime
+    case delayed (delay: Int, reason: String)
+    case cancelled
+    case unknown
+}
+
+struct Flight {
+    var number: String
+    var status: TransportStatus
+}
+
+var f1 = Flight(number: "AF72", status: .onTime)
+f1.status = .delayed(delay: 5, reason: "Fog")
+
+switch f1.status {
+case .onTime:
+    print("OK")
+case .delayed (let delay, let message):
+    print("delay : \(delay) minutes because \(message)")
+case .cancelled:
+    print("cancelled")
+case .unknown:
+    print("don't know")
+}
+
 
