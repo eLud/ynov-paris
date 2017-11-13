@@ -10,6 +10,8 @@ import UIKit
 
 class RestaurantListTableViewController: UITableViewController {
 
+    let dir = Directory(demoData: true)
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,21 +29,20 @@ class RestaurantListTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 10
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 10
+        return dir.list().count
     }
-
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: "restoCell", for: indexPath)
 
         // Configure the cell...
+
+        let currentResto = dir.list()[indexPath.row]
+         cell.textLabel?.text = currentResto.name
+        cell.detailTextLabel?.text = currentResto.address
 
         //Les cells sont recyclées, il faut y penser
         if indexPath.row%2 == 0 {

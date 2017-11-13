@@ -15,8 +15,20 @@ enum RestaurantStyle: Int {
 
 struct Restaurant: Equatable, Mappable {
 
-    var latitude: Double = 0.0
-    var longitude: Double = 0.0
+    init(name: String, address: String, style: RestaurantStyle, visited: Bool, grade: Int) {
+
+        self.name = name
+        self.address = address
+        self.isVisited = visited
+        self.style = style
+        self.note = grade
+
+        latitude = 0
+        longitude = 0
+    }
+
+    var latitude: Double
+    var longitude: Double
     var title: String {
         get {
             return name

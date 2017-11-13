@@ -17,7 +17,18 @@ class Directory {
 
     //    var restos: Array<Restaurant> = []
     //    var restos = [Restaurant]()
-    private var restos: [Restaurant] = []
+    private var restos: [Restaurant]
+
+    init(demoData: Bool = false) {
+        restos = []
+        if demoData {
+            for i in 0...20 {
+                let r = Restaurant(name: "Resto \(i)", address: "Adress \(i)", style: .chinese, visited: false, grade: 0)
+
+                restos.append(r)
+            }
+        }
+    }
 
     func add(_ newRestaurant: Restaurant) {
         restos.append(newRestaurant)
