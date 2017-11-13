@@ -7,15 +7,22 @@
 
 \f0\b\fs38 \cf0 Configurer un UITableView\
 \
-
-\b0 Ajouter UITableView \'e0 un viewController\
+(En italique : ne s'applique pas pour un UITableViewController)\
 \
-Ajouter une cellule "prototype" au tableView\
-Configurer la cellule prototype (design, style, etc.)\
+
+\i\b0 Ajouter UITableView \'e0 un viewController\
+
+\i0 \
+
+\i Ajouter une cellule "prototype" au tableView\
+
+\i0 Configurer la cellule prototype (design, style, etc.)\
 Ajouter un reuseIdentifier \'e0 cette cellule\
 \
-D\'e9finir le dataSource du tableView (clic-droit gliss\'e9, ou par le code)\
-Ajouter la conformit\'e9 au protocole dans l'assistant d\'e9sign\'e9 (souvent le contr\'f4leur)\
+
+\i D\'e9finir le dataSource du tableView (clic-droit gliss\'e9, ou par le code)\
+
+\i0 Ajouter la conformit\'e9 au protocole dans l'assistant d\'e9sign\'e9 (souvent le contr\'f4leur)\
 Impl\'e9menter les m\'e9thodes du dataSource dans la classe de l'assistant d\'e9sign\'e9\
 \
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
@@ -26,13 +33,11 @@ Impl\'e9menter les m\'e9thodes du dataSource dans la classe de l'assistant d\'e9
 \b et
 \b0  son indexPath !\
 \
-\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\f1 \cf0 \uc0\u9989  
+\f1 \uc0\u9989  
 \f0 tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)\
-\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\f1 \cf0 \uc0\u55357 \u57003  
+\f1 \uc0\u55357 \u57003  
 \f0 tableView.dequeueReusableCell(withIdentifier: "Cell")\
 \
 }
