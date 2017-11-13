@@ -15,6 +15,7 @@
 		3340831B1FB21339007E41A5 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3340831A1FB21339007E41A5 /* Restaurant.swift */; };
 		3340831D1FB21348007E41A5 /* Directory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3340831C1FB21348007E41A5 /* Directory.swift */; };
 		3340831F1FB9A173007E41A5 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3340831E1FB9A173007E41A5 /* UIColorExtension.swift */; };
+		33A4612B1FB9C1CB00901363 /* RestaurantListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A4612A1FB9C1CB00901363 /* RestaurantListTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		3340831A1FB21339007E41A5 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		3340831C1FB21348007E41A5 /* Directory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Directory.swift; sourceTree = "<group>"; };
 		3340831E1FB9A173007E41A5 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		33A4612A1FB9C1CB00901363 /* RestaurantListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				334083081FB1D82C007E41A5 /* AppDelegate.swift */,
 				3340830A1FB1D82C007E41A5 /* ViewController.swift */,
 				3340830C1FB1D82C007E41A5 /* Main.storyboard */,
+				33A4612A1FB9C1CB00901363 /* RestaurantListTableViewController.swift */,
 				3340831A1FB21339007E41A5 /* Restaurant.swift */,
 				3340831C1FB21348007E41A5 /* Directory.swift */,
 				3340830F1FB1D82C007E41A5 /* Assets.xcassets */,
@@ -149,6 +152,7 @@
 				334083091FB1D82C007E41A5 /* AppDelegate.swift in Sources */,
 				3340831F1FB9A173007E41A5 /* UIColorExtension.swift in Sources */,
 				3340831B1FB21339007E41A5 /* Restaurant.swift in Sources */,
+				33A4612B1FB9C1CB00901363 /* RestaurantListTableViewController.swift in Sources */,
 				3340831D1FB21348007E41A5 /* Directory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

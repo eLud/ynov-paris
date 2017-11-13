@@ -52,7 +52,7 @@ class ViewController: UIViewController {
         let isVisited = isVisitedSwitch.isOn
         let grade = Int(gradeSlider.value)
 
-        let resto = Restaurant(name: name, address: address, style: style, note: grade, isVisited: isVisited)
+        let resto = Restaurant(latitude: 0.0, longitude: 0.0, name: name, address: address, style: style, note: grade, isVisited: isVisited)
 
         dir.add(resto)
         dir.list()
