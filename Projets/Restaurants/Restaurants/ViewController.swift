@@ -21,6 +21,8 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        view.backgroundColor = UIColor.rouse.stronger()
     }
 
     @IBAction func sliderValueDidChange(_ sender: UISlider) {

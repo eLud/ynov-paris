@@ -6,6 +6,13 @@
 //  Copyright © 2017 Ynov. All rights reserved.
 //
 
+protocol Mappable {
+    var latitude: Double { get }
+    var longitude: Double { get }
+
+    var title: String { get set }
+}
+
 class Directory {
 
     //    var restos: Array<Restaurant> = []

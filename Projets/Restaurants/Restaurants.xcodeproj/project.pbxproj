@@ -14,6 +14,7 @@
 		334083131FB1D82C007E41A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 334083111FB1D82C007E41A5 /* LaunchScreen.storyboard */; };
 		3340831B1FB21339007E41A5 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3340831A1FB21339007E41A5 /* Restaurant.swift */; };
 		3340831D1FB21348007E41A5 /* Directory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3340831C1FB21348007E41A5 /* Directory.swift */; };
+		3340831F1FB9A173007E41A5 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3340831E1FB9A173007E41A5 /* UIColorExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		334083141FB1D82C007E41A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3340831A1FB21339007E41A5 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		3340831C1FB21348007E41A5 /* Directory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Directory.swift; sourceTree = "<group>"; };
+		3340831E1FB9A173007E41A5 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				3340830F1FB1D82C007E41A5 /* Assets.xcassets */,
 				334083111FB1D82C007E41A5 /* LaunchScreen.storyboard */,
 				334083141FB1D82C007E41A5 /* Info.plist */,
+				3340831E1FB9A173007E41A5 /* UIColorExtension.swift */,
 			);
 			path = Restaurants;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 			files = (
 				3340830B1FB1D82C007E41A5 /* ViewController.swift in Sources */,
 				334083091FB1D82C007E41A5 /* AppDelegate.swift in Sources */,
+				3340831F1FB9A173007E41A5 /* UIColorExtension.swift in Sources */,
 				3340831B1FB21339007E41A5 /* Restaurant.swift in Sources */,
 				3340831D1FB21348007E41A5 /* Directory.swift in Sources */,
 			);

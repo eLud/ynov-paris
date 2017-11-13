@@ -6,8 +6,6 @@
 //  Copyright © 2017 Ynov. All rights reserved.
 //
 
-import Foundation
-
 enum RestaurantStyle: Int {
     case chinese
     case burger
@@ -15,7 +13,19 @@ enum RestaurantStyle: Int {
     case other
 }
 
-struct Restaurant: Equatable {
+struct Restaurant: Equatable, Mappable {
+
+    var latitude: Double = 0.0
+    var longitude: Double = 0.0
+    var title: String {
+        get {
+            return name
+        }
+
+        set {
+            name = newValue
+        }
+    }
 
     var name: String
     var address: String
