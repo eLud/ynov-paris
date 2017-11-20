@@ -100,6 +100,13 @@ class RestaurantListTableViewController: UITableViewController {
             destVC.dir = self.dir
         } else if segue.identifier == "showDetails" {
 
+            guard let destVC = segue.destination as? RestoDetailsViewController else { fatalError("bad type, expected RestoDetailsViewController") }
+
+            guard let cell = sender as? UITableViewCell else { return }
+            guard let indexPath = tableView.indexPath(for: cell) else { return }
+
+            let currentResto = dir.list()[indexPath.row]
+            destVC.resto = currentResto
         }
     }
 

@@ -7,13 +7,28 @@
 //
 
 import UIKit
+import MapKit
 
 class RestoDetailsViewController: UIViewController {
+
+    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var mapView: MKMapView!
+
+    var resto: Restaurant?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        guard let r = resto else { fatalError("No resto provided")}
+        configure(with: r)
+    }
+
+    private func configure(with restaurant: Restaurant) {
+
+        title = restaurant.name
+        nameLabel.text = restaurant.name
+        addressLabel.text = restaurant.address
     }
 
     override func didReceiveMemoryWarning() {
