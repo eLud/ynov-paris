@@ -17,12 +17,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var gradeSlider: UISlider!
     @IBOutlet weak var sliderValueLabel: UILabel!
 
-    let dir = Directory()
+    var dir: Directory?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = UIColor.rouse.stronger()
+        guard dir != nil else { fatalError("No directory provided") }
     }
 
     @IBAction func sliderValueDidChange(_ sender: UISlider) {
@@ -34,6 +34,11 @@ class ViewController: UIViewController {
     }
 
     @IBAction func cancel(_ sender: Any) {
+
+        //Closures
+        dismiss(animated: true) {
+            print("Dismissed")
+        }
     }
 
     @IBAction func save(_ sender: Any) {
@@ -54,8 +59,10 @@ class ViewController: UIViewController {
 
         let resto = Restaurant(name: name, address: address, style: style, visited: isVisited, grade: grade)
 
-        dir.add(resto)
-        dir.list()
+        dir?.add(resto)
+        dir?.list()
+
+        dismiss(animated: true, completion: nil)
     }
 }
 

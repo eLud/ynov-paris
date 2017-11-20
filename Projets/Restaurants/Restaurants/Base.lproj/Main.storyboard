@@ -221,14 +221,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5IY-1g-23Q">
-                                <rect key="frame" x="259" y="88" width="100" height="100"/>
-                                <color key="backgroundColor" red="0.45009386540000001" green="0.98132258650000004" blue="0.4743030667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="41v-H1-Y0D"/>
-                                    <constraint firstAttribute="width" constant="100" id="D7Z-ww-ac8"/>
-                                </constraints>
-                            </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RPo-Xw-jkz">
                                 <rect key="frame" x="250" y="652" width="109" height="77"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -246,16 +238,22 @@
                                     <constraint firstAttribute="width" constant="100" id="TsI-zO-TvI"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5IY-1g-23Q">
+                                <rect key="frame" x="259" y="64" width="100" height="100"/>
+                                <color key="backgroundColor" red="0.45009386540000001" green="0.98132258650000004" blue="0.4743030667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="5IY-1g-23Q" firstAttribute="width" secondItem="rkj-B0-ZTF" secondAttribute="width" id="5aV-wt-z6l"/>
                             <constraint firstItem="rkj-B0-ZTF" firstAttribute="top" secondItem="AQz-VZ-WC3" secondAttribute="top" id="PVl-8J-BHV"/>
                             <constraint firstItem="EaZ-ct-eQa" firstAttribute="bottom" secondItem="AQz-VZ-WC3" secondAttribute="bottom" id="RHR-kP-JRW"/>
                             <constraint firstItem="rkj-B0-ZTF" firstAttribute="leading" secondItem="AQz-VZ-WC3" secondAttribute="leading" constant="30" id="VZp-Ha-lzX"/>
                             <constraint firstItem="EaZ-ct-eQa" firstAttribute="width" secondItem="rkj-B0-ZTF" secondAttribute="width" id="Vh7-L2-voy"/>
                             <constraint firstItem="EaZ-ct-eQa" firstAttribute="height" secondItem="rkj-B0-ZTF" secondAttribute="height" id="Xxd-sU-tD6"/>
-                            <constraint firstItem="5IY-1g-23Q" firstAttribute="top" secondItem="Xg2-DN-WPV" secondAttribute="top" constant="88" id="ci4-Xc-XQ2"/>
-                            <constraint firstItem="5IY-1g-23Q" firstAttribute="trailing" secondItem="Xg2-DN-WPV" secondAttribute="trailing" constant="-16" id="x6q-Yc-zsu"/>
+                            <constraint firstItem="5IY-1g-23Q" firstAttribute="height" secondItem="rkj-B0-ZTF" secondAttribute="height" id="YeP-wd-NCe"/>
+                            <constraint firstItem="5IY-1g-23Q" firstAttribute="top" secondItem="rkj-B0-ZTF" secondAttribute="top" id="pYc-uY-aTk"/>
+                            <constraint firstItem="AQz-VZ-WC3" firstAttribute="trailing" secondItem="5IY-1g-23Q" secondAttribute="trailing" constant="16" id="pdg-it-9Xh"/>
                             <constraint firstItem="EaZ-ct-eQa" firstAttribute="leading" secondItem="rkj-B0-ZTF" secondAttribute="leading" id="xbT-ao-87p"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="AQz-VZ-WC3"/>
@@ -299,7 +297,7 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <segue destination="Tt3-D6-CEp" kind="show" id="O0r-jR-NrP"/>
+                                    <segue destination="Tt3-D6-CEp" kind="show" identifier="showDetails" id="O0r-jR-NrP"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -311,7 +309,7 @@
                     <navigationItem key="navigationItem" title="Restaurants" id="cUd-NT-2vi">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="QUd-4Y-fTc">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="presentation" id="cQ9-77-lfD"/>
+                                <segue destination="BYZ-38-t0r" kind="presentation" identifier="showForm" id="cQ9-77-lfD"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
