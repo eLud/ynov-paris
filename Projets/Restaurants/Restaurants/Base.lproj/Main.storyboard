@@ -88,10 +88,10 @@
                                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="bun-Rg-9ZD">
                                                         <rect key="frame" x="0.0" y="28.333333333333343" width="359" height="29"/>
                                                         <segments>
-                                                            <segment title="First"/>
-                                                            <segment title="Second"/>
-                                                            <segment title=""/>
-                                                            <segment title=""/>
+                                                            <segment title="Chinese"/>
+                                                            <segment title="Burger"/>
+                                                            <segment title="Vegan"/>
+                                                            <segment title="Other"/>
                                                         </segments>
                                                     </segmentedControl>
                                                 </subviews>
