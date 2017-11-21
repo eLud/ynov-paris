@@ -6,6 +6,8 @@
 //  Copyright © 2017 Ynov. All rights reserved.
 //
 
+import Foundation
+
 protocol Mappable {
     var latitude: Double { get }
     var longitude: Double { get }
@@ -13,7 +15,7 @@ protocol Mappable {
     var title: String { get set }
 }
 
-class Directory {
+class Directory: Codable {
 
     //    var restos: Array<Restaurant> = []
     //    var restos = [Restaurant]()
@@ -32,14 +34,15 @@ class Directory {
 
     func add(_ newRestaurant: Restaurant) {
         restos.append(newRestaurant)
+        notifyChanges(restoName: newRestaurant.name)
+
+        let prefs = UserDefaults.standard
+        prefs.set(newRestaurant.name, forKey: "lastResto")
+
+        save()
     }
 
     func list() -> [Restaurant] {
-
-        for r in restos {
-            print(r.name)
-        }
-
         return restos
     }
 
@@ -47,6 +50,7 @@ class Directory {
 
         if let index = restos.index(of: restaurant) {
             remove(at: index)
+            notifyChanges(restoName: restaurant.name)
         } else {
             print("Resto not in array")
         }
@@ -55,4 +59,40 @@ class Directory {
     func remove(at index: Int) {
         restos.remove(at: index)
     }
+
+    private func notifyChanges(restoName: String) {
+        let notCenter = NotificationCenter.default
+        notCenter.post(name: Notification.Name("ModelUpdated"), object: self, userInfo: ["restoName" : restoName])
+    }
+
+    private func save() {
+
+        do {
+            let encoder = JSONEncoder()
+            let data = try encoder.encode(self)
+            let dataStr = String(data: data, encoding: .utf8)
+            print(dataStr!)
+
+            let fm = FileManager.default
+            var url = fm.urls(for: .documentDirectory, in: .userDomainMask).first!
+            url.appendPathComponent("directory.json")
+            print(url)
+
+            try data.write(to: url)
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+
+    private func parse(data: Data) {
+
+        if let dir = try? JSONDecoder().decode(Directory.self, from: data) {
+            print(dir.list().last?.name)
+        }
+    }
 }
+
+
+
+
+

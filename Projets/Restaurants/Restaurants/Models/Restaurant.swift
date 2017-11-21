@@ -6,14 +6,14 @@
 //  Copyright © 2017 Ynov. All rights reserved.
 //
 
-enum RestaurantStyle: Int {
+enum RestaurantStyle: Int, Codable {
     case chinese
     case burger
     case vegan
     case other
 }
 
-struct Restaurant: Equatable, Mappable {
+struct Restaurant: Equatable, Mappable, Codable {
 
     init(name: String, address: String, style: RestaurantStyle, visited: Bool, grade: Int) {
 

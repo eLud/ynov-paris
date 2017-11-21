@@ -29,6 +29,10 @@ class RestoDetailsViewController: UIViewController {
         title = restaurant.name
         nameLabel.text = restaurant.name
         addressLabel.text = restaurant.address
+
+        let prefs = UserDefaults.standard
+        let lastResto = prefs.string(forKey: "lastResto")
+        title = lastResto
     }
 
     override func didReceiveMemoryWarning() {
