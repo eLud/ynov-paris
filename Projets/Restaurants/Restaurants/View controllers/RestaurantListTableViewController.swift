@@ -10,7 +10,7 @@ import UIKit
 
 class RestaurantListTableViewController: UITableViewController {
 
-    let dir = Directory(demoData: true)
+    let dir = Directory(demoData: false)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +30,6 @@ class RestaurantListTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return dir.list().count
     }
 
