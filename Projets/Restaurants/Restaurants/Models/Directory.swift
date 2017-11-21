@@ -29,6 +29,7 @@ class Directory: Codable {
 
                 restos.append(r)
             }
+            return
         }
 
         if let dir = directoryFromSavedData() {
@@ -69,6 +70,8 @@ class Directory: Codable {
         notCenter.post(name: Notification.Name("ModelUpdated"), object: self, userInfo: ["restoName" : restoName])
     }
 
+    //MARK: - Persistance
+
     private func save() {
         do {
             let encoder = JSONEncoder()
@@ -91,16 +94,10 @@ class Directory: Codable {
     }
 
     private func urlForDirectoryData() -> URL? {
-
         let fm = FileManager.default
-        var url = fm.urls(for: .documentDirectory, in: .userDomainMask).first!
-        url.appendPathComponent("directory.json")
+        var url = fm.urls(for: .documentDirectory, in: .userDomainMask).first
+        url?.appendPathComponent("directory.json")
 
         return url
     }
 }
-
-
-
-
-
