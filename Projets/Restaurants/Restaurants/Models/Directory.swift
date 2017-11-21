@@ -30,6 +30,10 @@ class Directory: Codable {
                 restos.append(r)
             }
         }
+
+        if let dir = directoryFromSavedData() {
+            restos = dir.restos
+        }
     }
 
     func add(_ newRestaurant: Restaurant) {
@@ -66,29 +70,33 @@ class Directory: Codable {
     }
 
     private func save() {
-
         do {
             let encoder = JSONEncoder()
             let data = try encoder.encode(self)
-            let dataStr = String(data: data, encoding: .utf8)
-            print(dataStr!)
 
-            let fm = FileManager.default
-            var url = fm.urls(for: .documentDirectory, in: .userDomainMask).first!
-            url.appendPathComponent("directory.json")
-            print(url)
-
+            guard let url = urlForDirectoryData() else { fatalError() }
             try data.write(to: url)
         } catch {
             print(error.localizedDescription)
         }
     }
 
-    private func parse(data: Data) {
+    private func directoryFromSavedData() -> Directory? {
 
-        if let dir = try? JSONDecoder().decode(Directory.self, from: data) {
-            print(dir.list().last?.name)
-        }
+        guard let url = urlForDirectoryData() else { return nil }
+        guard let data = try? Data(contentsOf: url) else { return nil }
+        guard let dir = try? JSONDecoder().decode(Directory.self, from: data) else { return nil }
+
+        return dir
+    }
+
+    private func urlForDirectoryData() -> URL? {
+
+        let fm = FileManager.default
+        var url = fm.urls(for: .documentDirectory, in: .userDomainMask).first!
+        url.appendPathComponent("directory.json")
+
+        return url
     }
 }
 
